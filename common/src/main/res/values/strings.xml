@@ -1,0 +1,5 @@
+<resources>
+    <string name="form_username">código</string>
+    <string name="form_password">senha</string>
+    <string name="form_login">Entrar</string>
+</resources>

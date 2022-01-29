@@ -1,0 +1,14 @@
+ext {
+    libs = [
+            "corektx"  : "androidx.core:core-ktx:$coreKtx",
+            "appcompat": "androidx.appcompat:appcompat:$appCompat",
+            "material" : "com.google.android.material:material:$material",
+            "constraintlayout" : "androidx.constraintlayout:constraintlayout:$constraintlayout",
+            "collectionktx" : "androidx.collection:collection-ktx:$collectionktx",
+            "navigationfragment" : "androidx.navigation:navigation-fragment-ktx:$navigation",
+            "navigationui" : "androidx.navigation:navigation-ui-ktx:$navigation",
+            "koinviewmodel" : "io.insert-koin:koin-android:$koin",
+            "koincore" : "io.insert-koin:koin-core:$koin",
+            "koinandroid" : "io.insert-koin:koin-android:$koin"
+    ]
+}

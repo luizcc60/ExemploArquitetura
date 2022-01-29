@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: "$rootProject.projectDir/android-common.gradle"
+
+dependencies {
+    def libs = rootProject.ext.libs
+    implementation libs.corektx
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.navigationui
+    implementation libs.navigationfragment
+    implementation libs.constraintlayout
+}

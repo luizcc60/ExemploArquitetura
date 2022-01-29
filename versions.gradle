@@ -1,0 +1,16 @@
+ext {
+    //versions
+    androidCompileSdkVersion = 31
+    androidMinSdkVersion = 23
+    androidTargetSdkVersion = 31
+    androidVersionCode = 1
+    androidVersionName = "1.0.0"
+
+    coreKtx = "1.7.0"
+    appCompat = "1.4.1"
+    material = "1.5.0"
+    collectionktx = "1.2.0"
+    navigation = "2.3.5"
+    constraintlayout = "2.1.3"
+    koin = "3.1.5"
+}
