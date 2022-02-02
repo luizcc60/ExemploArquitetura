@@ -1,19 +1,19 @@
-package br.com.havan.common.presentation
+package br.com.havan.common.presentation.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.havan.common.domain.model.AutenticacaoModel
-import br.com.havan.common.domain.repository.AutenticarUseCase
+import br.com.havan.common.domain.model.LoginModel
+import br.com.havan.common.domain.usecase.logar.LogarUseCase
 import kotlinx.coroutines.*
-import br.com.havan.common.domain.usecase.autenticacao.autenticar.AutenticarUseCaseImpl.Params as AutenticacaoParams
+import br.com.havan.common.domain.usecase.logar.LogarUseCaseImpl.Params as LogarParams
 
 
-class LoginViewModel(private val autenticarUseCase: AutenticarUseCase) : ViewModel() {
+class LoginViewModel(private val logarUseCase: LogarUseCase) : ViewModel() {
 
-    private val _autenticacaoViewState = MutableLiveData<AutenticacaoModel>()
-    val autenticacaoViewState: LiveData<AutenticacaoModel> = _autenticacaoViewState
+    private val _loginViewState = MutableLiveData<LoginModel>()
+    val loginViewState: LiveData<LoginModel> = _loginViewState
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoadingViewState: LiveData<Boolean> = _isLoading
@@ -26,13 +26,12 @@ class LoginViewModel(private val autenticarUseCase: AutenticarUseCase) : ViewMod
         _exception.postValue(throwable)
     }
 
-    fun autenticar(codigo: String?, senha: String?) {
+    fun autenticar(codigo: String, senha: String) {
         viewModelScope.launch(exceptionHandler) {
             exibirLoading(true)
-            delay(2000)
-            _autenticacaoViewState.value = withContext(Dispatchers.Main) {
-                autenticarUseCase.autenticar(
-                    AutenticacaoParams(codigo, senha)
+            _loginViewState.value = withContext(Dispatchers.Main) {
+                logarUseCase.logar(
+                    LogarParams(codigo, senha)
                 )
             }
             exibirLoading()

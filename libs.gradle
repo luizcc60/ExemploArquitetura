@@ -9,6 +9,13 @@ ext {
             "navigationui" : "androidx.navigation:navigation-ui-ktx:$navigation",
             "koinviewmodel" : "io.insert-koin:koin-android:$koin",
             "koincore" : "io.insert-koin:koin-core:$koin",
-            "koinandroid" : "io.insert-koin:koin-android:$koin"
+            "koinandroid" : "io.insert-koin:koin-android:$koin",
+            "gson" : "com.google.code.gson:gson:$gson",
+            "okhttpbom" : "com.squareup.okhttp3:okhttp-bom:$okhttp",
+            "okhttp" : "com.squareup.okhttp3:okhttp",
+            "okhttplogging" : "com.squareup.okhttp3:logging-interceptor",
+            "retrofit" : "com.squareup.retrofit2:retrofit:$retrofit",
+            "retrofitconverter" : "com.squareup.retrofit2:converter-gson:$retrofit",
+            "retrofitcoroutine" : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofitcoroutineversion"
     ]
 }

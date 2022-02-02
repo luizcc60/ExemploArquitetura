@@ -1,4 +1,4 @@
-package br.com.havan.common.presentation
+package br.com.havan.common.presentation.login
 
 import android.app.ProgressDialog
 import android.os.Bundle
@@ -53,7 +53,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun autenticacaoObserver() {
-        loginViewModel.autenticacaoViewState.observe(viewLifecycleOwner) {
+        loginViewModel.loginViewState.observe(viewLifecycleOwner) {
 
         }
     }
