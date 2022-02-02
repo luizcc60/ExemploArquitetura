@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import br.com.havan.common.databinding.FragmentLoginBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -54,7 +55,8 @@ class LoginFragment : Fragment() {
 
     private fun autenticacaoObserver() {
         loginViewModel.loginViewState.observe(viewLifecycleOwner) {
-
+            val action = LoginFragmentDirections.actionLoginFragmentToColetorFragment(it.codigo)
+            findNavController().navigate(action)
         }
     }
 
@@ -79,5 +81,10 @@ class LoginFragment : Fragment() {
 
     private fun hideProgressBar() {
         progressDialog?.dismiss()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

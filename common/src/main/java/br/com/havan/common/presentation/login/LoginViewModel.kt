@@ -1,5 +1,6 @@
 package br.com.havan.common.presentation.login
 
+import SingleLiveEvent
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,13 +13,13 @@ import br.com.havan.common.domain.usecase.logar.LogarUseCaseImpl.Params as Logar
 
 class LoginViewModel(private val logarUseCase: LogarUseCase) : ViewModel() {
 
-    private val _loginViewState = MutableLiveData<LoginModel>()
+    private val _loginViewState = SingleLiveEvent<LoginModel>()
     val loginViewState: LiveData<LoginModel> = _loginViewState
 
-    private val _isLoading = MutableLiveData<Boolean>()
+    private val _isLoading = SingleLiveEvent<Boolean>()
     val isLoadingViewState: LiveData<Boolean> = _isLoading
 
-    private val _exception = MutableLiveData<Throwable>()
+    private val _exception = SingleLiveEvent<Throwable>()
     val exceptionViewState: LiveData<Throwable> = _exception
 
     private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->

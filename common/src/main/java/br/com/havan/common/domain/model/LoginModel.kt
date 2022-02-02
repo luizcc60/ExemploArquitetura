@@ -1,3 +1,3 @@
 package br.com.havan.common.domain.model
 
-class LoginModel(token: String)
+class LoginModel(val token: String, val codigo: String)

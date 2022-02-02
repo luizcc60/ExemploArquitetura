@@ -2,4 +2,5 @@
     <string name="form_username">código</string>
     <string name="form_password">senha</string>
     <string name="form_login">Entrar</string>
+    <string name="hello_blank_fragment">72213</string>
 </resources>
