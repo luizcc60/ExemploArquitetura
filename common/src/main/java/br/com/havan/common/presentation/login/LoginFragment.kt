@@ -55,7 +55,7 @@ class LoginFragment : Fragment() {
 
     private fun autenticacaoObserver() {
         loginViewModel.loginViewState.observe(viewLifecycleOwner) {
-            val action = LoginFragmentDirections.actionLoginFragmentToColetorFragment(it.codigo)
+            val action = LoginFragmentDirections.actionLoginFragmentToAplicativosFragment()
             findNavController().navigate(action)
         }
     }

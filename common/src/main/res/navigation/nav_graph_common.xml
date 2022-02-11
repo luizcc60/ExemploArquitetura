@@ -9,10 +9,10 @@
         android:id="@+id/loginFragment"
         android:name="br.com.havan.common.presentation.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_coletorFragment"
-            app:destination="@id/coletorFragment" />
+            android:id="@+id/action_loginFragment_to_aplicativosFragment"
+            app:destination="@id/aplicativosFragment" />
     </fragment>
     <fragment
         android:id="@+id/coletorFragment"
@@ -20,8 +20,17 @@
         android:label="fragment_coletor"
         tools:layout="@layout/fragment_coletor" >
         <argument
-            android:name="codigo"
-            app:argType="string" />
+            android:name="aplicativo"
+            app:argType="br.com.havan.common.presentation.aplicativos.AplicativoModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/aplicativosFragment"
+        android:name="br.com.havan.common.presentation.aplicativos.AplicativosFragment"
+        android:label="fragment_aplicativos"
+        tools:layout="@layout/fragment_aplicativos">
+        <action
+            android:id="@+id/action_aplicativosFragment_to_coletorFragment"
+            app:destination="@id/coletorFragment" />
     </fragment>
 
 </navigation>
